@@ -1,6 +1,10 @@
 {
     "cSpell.words": [
+        "firstname",
         "Gborie",
         "Sahr"
+    ],
+    "cSpell.ignoreWords": [
+        "lastname"
     ]
 }
