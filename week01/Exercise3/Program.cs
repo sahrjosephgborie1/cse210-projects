@@ -14,7 +14,7 @@ class Program
         
 
         // guesscount
-        int guessCount = -1;
+        int guessCount = 0;
 
         while (true)
         {
@@ -25,6 +25,7 @@ class Program
             if (numberGuess == magicNumber)
             {
                 Console.WriteLine("You guessed it!");
+                guessCount = guessCount + 1;
                 Console.WriteLine($"You guessed Count: {guessCount}");
                 Console.WriteLine();
             }
@@ -51,10 +52,12 @@ class Program
                 {
                     Random randomGen = new Random();
                     magicNumber = randomGen.Next(1, 101);
+                    guessCount = 0;
                     break;
                 }
                 else if (response == "no" || response == "n")
                 {
+                    Console.WriteLine("Goodbye!");
                     return;
                 }
                 else
