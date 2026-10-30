@@ -10,7 +10,7 @@ class Program
 
         // Random Number
         Random randomGenerator = new Random();
-        int magicNumber = randomGenerator.Next(1, 101);
+        int magicNumber = randomGenerator.Next(1, 301);
         
 
         // guesscount
@@ -26,19 +26,19 @@ class Program
             {
                 Console.WriteLine("You guessed it!");
                 guessCount = guessCount + 1;
-                Console.WriteLine($"You guessed Count: {guessCount}");
+                Console.WriteLine($" Congrats! Your guessed Count: {guessCount}");
                 Console.WriteLine();
             }
             else if (numberGuess < magicNumber)
             {
-                Console.WriteLine("Higher");
                 guessCount = guessCount + 1;
+                Console.WriteLine($"Higher, guessed Count: {guessCount}");
                 continue;
             }
             else if (numberGuess > magicNumber)
             {
-                Console.WriteLine("Lower");
                 guessCount = guessCount + 1;
+                Console.WriteLine($"Lower, guessed Count: {guessCount}");
                 continue;
             }
 
@@ -51,7 +51,7 @@ class Program
                 if (response == "yes" || response == "y")
                 {
                     Random randomGen = new Random();
-                    magicNumber = randomGen.Next(1, 101);
+                    magicNumber = randomGen.Next(1, 301);
                     guessCount = 0;
                     break;
                 }
