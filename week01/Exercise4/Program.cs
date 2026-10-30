@@ -13,23 +13,34 @@ class Program
 
         // Lists and Generics
         List<int> numbers; numbers = new List<int>();
-        List<string> words; words = new List<string>();
+        // List<string> words; words = new List<string>();
         int sum = 0;
         int largestNumbber = 0;
         int smallestPositive = 1000;
 
-        Console.Write("Enter number: ");
-        string userInput = Console.ReadLine();
-        int userNumber = int.Parse(userInput);
+        // Console.Write("Enter number: ");
+        // string userInput = Console.ReadLine();
+        // int userNumber = int.Parse(userInput);
+        int userNumber = -1;
 
         // Ask the user for a series of numbers
         while (userNumber != 0)
         {
-                // Append
-            numbers.Add(userNumber);
-            Console.Write("Enter number: ");
-            userInput = Console.ReadLine();
+            Console.Write("Enter a number: ");
+            string userInput = Console.ReadLine();
             userNumber = int.Parse(userInput);        
+            
+
+            if (userNumber == 0)
+            {
+                break;
+            }
+            else if (userNumber != 0)
+            {
+                // Append
+                numbers.Add(userNumber);
+                continue;
+            }
         }
 
         
@@ -54,7 +65,7 @@ class Program
             }
         }
         // Compute the average of the numbers in the list.
-        double average = (double)sum / numbers.Count;
+        float average = ((float)sum) / numbers.Count;
 
         Console.WriteLine($"The sum is: {sum}");
         Console.WriteLine($"The average is: {average}");
