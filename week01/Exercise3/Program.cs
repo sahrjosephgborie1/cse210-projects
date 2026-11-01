@@ -10,7 +10,7 @@ class Program
 
         // Random Number
         Random randomGenerator = new Random();
-        int magicNumber = randomGenerator.Next(1, 301);
+        int magicNumber = randomGenerator.Next(1, 101);
         
 
         // guesscount
@@ -51,7 +51,7 @@ class Program
                 if (response == "yes" || response == "y")
                 {
                     Random randomGen = new Random();
-                    magicNumber = randomGen.Next(1, 301);
+                    magicNumber = randomGen.Next(1, 101);
                     guessCount = 0;
                     break;
                 }
