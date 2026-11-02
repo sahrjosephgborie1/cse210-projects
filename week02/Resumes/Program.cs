@@ -4,8 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the Resumes Project.");
-
         Job job1 = new Job();
 
         // setting members Variables
@@ -22,22 +20,16 @@ class Program
         job2._startYear = 2020;
         job2._endYear = 2023;
 
-
         // add resume
         Resume myResume = new Resume();
+        myResume._name = "Sahr Joseph Gborie";
 
         // add job details to job
-        myResume._name = "Sahr Joseph Gborie";
         myResume._jobs.Add(job1);
         myResume._jobs.Add(job2);
 
         // Displaying variables
         myResume.DisplayResume();
-        Console.WriteLine("Jobs:");
-        job1.DisplayJobDetails();
-        job2.DisplayJobDetails();
-        // Console.WriteLine($"{myResume._jobs[0]._jobTitle}");
-        
         
     }
 }
