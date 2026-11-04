@@ -4,13 +4,29 @@ class Program
 {
     static void Main(string[] args)
     {
+        // add resume
+        Resume myResume = new Resume();
+        Console.Write("Name: ");
+        myResume._name = Console.ReadLine();
+
+        // jobs
         Job job1 = new Job();
 
         // setting members Variables
-        job1._jobTitle = "Software Engineer";
-        job1._company = "Microsoft";
-        job1._startYear = 2019;
-        job1._endYear = 2022;
+        Console.Write("Job Title: ");
+        job1._jobTitle = Console.ReadLine();
+        Console.Write("Company: ");
+        job1._company = Console.ReadLine();
+
+        // start year
+        Console.Write("Start Year: ");
+        int startYear = int.Parse(Console.ReadLine());
+        job1._startYear = startYear;
+
+        // End year
+        Console.Write("End Year: ");
+        int endYear = int.Parse(Console.ReadLine());
+        job1._endYear = endYear;
 
         // Second Job (Job2)
         Job job2 = new Job();
@@ -19,10 +35,6 @@ class Program
         job2._company = "Apple";
         job2._startYear = 2020;
         job2._endYear = 2023;
-
-        // add resume
-        Resume myResume = new Resume();
-        myResume._name = "Sahr Joseph Gborie";
 
         // add job details to job
         myResume._jobs.Add(job1);
