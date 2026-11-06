@@ -7,9 +7,7 @@ public class Journal
         foreach (Entry enty in _entries)
         {
             // display methods
-        Console.WriteLine($"Date: {enty._date}");
-        Console.WriteLine($"Promt-Text: {enty._promtText}");
-        Console.WriteLine($"EntryText: {enty._entryText}");
+            Console.WriteLine($"Promt-Text: {enty._promtText}, EntryText: {enty._entryText}, Date: {enty._date}");
         }
     }
 

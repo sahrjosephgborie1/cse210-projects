@@ -8,8 +8,8 @@ public class Entry
     public void Display()
     {
         // display methods
-        Console.WriteLine($"Date: {_date}");
         Console.WriteLine($"Promt: {_promtText}");
         Console.WriteLine($"EntryText: {_entryText}");
+        Console.WriteLine($"Date: {_date}");
     }
 }
