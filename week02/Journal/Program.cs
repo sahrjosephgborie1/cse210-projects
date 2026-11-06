@@ -16,7 +16,10 @@ class Program
         newEntry._promtText = randomGeneratorText;
         
         // add prompttext to the list of promptgenerated
-        PromptGenerator newPromptgen = new PromptGenerator();
+        List<string> promtlist = new List<string>();
+        promtlist.Add(randomGeneratorText);
+        
+
         // to dooooooooooo
         
 
