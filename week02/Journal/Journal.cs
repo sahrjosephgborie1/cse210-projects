@@ -33,7 +33,7 @@ public class Journal
         {
             foreach (Entry enty in journals)
             {
-                outputFile.WriteLine($"Promt-Text: {enty._promtText}~~EntryText: {enty._entryText}~~Date: {enty._date}");
+                outputFile.WriteLine($"{enty._promtText}~~{enty._entryText}~~{enty._date}");
             }
         }
         Console.WriteLine("File Sucessfully Saved.");

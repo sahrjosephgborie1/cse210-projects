@@ -66,12 +66,7 @@ class Program
                 // read fromfile
                 List<Entry> ReadFile = Journal.LoadFromFile();
 
-                // foreach (Entry enty in ReadFile)
-                // {
-                //     // display methods
-                //     Console.WriteLine($"Date: {enty._date} - Promt: {enty._promtText},");
-                //     Console.WriteLine($"{enty._entryText}");
-                // }
+                // add the fileRead to journal for displaying
                 theJournal._entries = ReadFile;
                 continue;
             }
