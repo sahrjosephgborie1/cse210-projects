@@ -58,7 +58,7 @@ class Program
                 while (true)
                 {   
                     // moodrating 
-                    Console.Write("Rate your mood from 1 to 5:");
+                    Console.Write("Rate your mood from 1 to 5: ");
                     string ratingResponse = Console.ReadLine();
                     int moodRating = int.Parse(ratingResponse);
                     if (moodRating >= 1 && moodRating <=5)
