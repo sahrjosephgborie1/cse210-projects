@@ -14,9 +14,8 @@ public class Journal
         foreach (Entry enty in _entries)
         {
             // display methods
-            Console.WriteLine($"Date: {enty._date} - Promt: {enty._promtText},");
-            Console.WriteLine($"{enty._entryText}");
-            Console.WriteLine();
+            enty.Display();
+            Console.WriteLine("-----------------------------------------------------------------");
         }
     }
 
@@ -33,7 +32,7 @@ public class Journal
         {
             foreach (Entry enty in journals)
             {
-                outputFile.WriteLine($"{enty._promtText}~~{enty._entryText}~~{enty._date}");
+                outputFile.WriteLine($"{enty._promtText}~~{enty._entryText}~~{enty._date}~~{enty._Category}~~{enty._moodRating}");
             }
         }
         Console.WriteLine("File Sucessfully Saved.");
@@ -69,11 +68,17 @@ public class Journal
                 // parts[0] - prompttext
                 // part[1] - entrytext
                 // part[2] - date
+                // part[3] - category
+                // part[4] - moodrating
 
                 Entry newEntry = new Entry();
                 newEntry._promtText = parts[0];
                 newEntry._entryText = parts[1];
                 newEntry._date = parts[2];
+
+                //category and moodrating
+                newEntry._Category = parts[3];
+                newEntry._moodRating = int.Parse(parts[4]);
 
                 // add newentry to listloaded and the journal
                 listLoaded.Add(newEntry);

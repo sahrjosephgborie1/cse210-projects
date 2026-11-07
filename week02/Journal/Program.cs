@@ -50,6 +50,32 @@ class Program
                 string dateText = theCurrentTime.ToShortDateString();
                 newEntry._date = dateText;
 
+                // Added category and moodRating
+                Console.WriteLine("What category is this entry? (e.g., Gratitude, Goals, Work, Personal): ");
+                string category = Console.ReadLine();
+                newEntry._Category = category;
+
+                while (true)
+                {   
+                    // moodrating 
+                    Console.Write("Rate your mood from 1 to 5:");
+                    string ratingResponse = Console.ReadLine();
+                    int moodRating = int.Parse(ratingResponse);
+                    if (moodRating >= 1 && moodRating <=5)
+                    {
+                        // add mood rating to entry
+                        newEntry._moodRating = moodRating;
+
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input. Please make sure it's a number between 1 and 5.");
+
+                        continue;
+                    }
+                }
+
                 // add entry to journal
                 theJournal.AddEntry(newEntry);
 
