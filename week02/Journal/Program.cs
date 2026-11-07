@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 
 class Program
-{
+{   
+    // Exceeding Requirements (100%): Added custom Categories (e.g., Gratitude, Goals, Work) and a 1–5 Mood Rating
     static void Main(string[] args)
     {   
         // Journal
