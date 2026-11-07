@@ -8,32 +8,91 @@ class Program
     static void Main(string[] args)
     {   
         // Journal
-        Journal myjournal = new Journal();
+        Journal theJournal = new Journal();
         
-        // Random prompt
-        PromptGenerator newPromptGenerator = new PromptGenerator();
-        string promptGenerator = newPromptGenerator.GetRandomPrompt();
-        Console.WriteLine($"{promptGenerator} ");
-        Console.Write("> ");
-        
-        // add promptText to entry
-        Entry newEntry = new Entry();
-        newEntry._promtText = promptGenerator;
-        string promttextFromentry = newEntry._promtText;
-        
-        // add entry text to entry
-        string response = Console.ReadLine();
-        newEntry._entryText = response;
 
-        // add current date to entry
-        DateTime theCurrentTime = DateTime.Now;
-        string dateText = theCurrentTime.ToShortDateString();
-        newEntry._date = dateText;
+        Console.WriteLine("Welcome to the Journal Program!");
 
-        // add entry to journal
-        myjournal._entries.Add(newEntry);
+        while (true)
+        {
+            
+            Console.WriteLine("Please Select one of the following Choices:");
+            Console.WriteLine("1. Write");
+            Console.WriteLine("2. Display");
+            Console.WriteLine("3. Load");
+            Console.WriteLine("4. Save");
+            Console.WriteLine("5. Quit");
+            Console.Write("What would you like to do? ");
 
-        newEntry.Display();
-        myjournal.DisplayAll();
+            string userInput = Console.ReadLine();
+            int choice = int.Parse(userInput);
+
+            if (choice == 1)
+            {
+                // Random prompt
+                PromptGenerator newPromptGenerator = new PromptGenerator();
+                string promptGenerator = newPromptGenerator.GetRandomPrompt();
+                Console.WriteLine($"{promptGenerator} ");
+                Console.Write("> ");
+                
+                // add promptText to entry
+                // Entry
+                Entry newEntry = new Entry();
+                newEntry._promtText = promptGenerator;
+                string promttextFromentry = newEntry._promtText;
+                
+                // add entry text to entry
+                string response = Console.ReadLine();
+                newEntry._entryText = response;
+
+                // add current date to entry
+                DateTime theCurrentTime = DateTime.Now;
+                string dateText = theCurrentTime.ToShortDateString();
+                newEntry._date = dateText;
+
+                // add entry to journal
+                theJournal.AddEntry(newEntry);
+
+                continue;
+            }
+            else if (choice == 2)
+            {
+                theJournal.DisplayAll();
+
+                continue;
+            }
+            else if (choice == 3)
+            {
+                // read fromfile
+                List<Entry> ReadFile = Journal.LoadFromFile();
+
+                // foreach (Entry enty in ReadFile)
+                // {
+                //     // display methods
+                //     Console.WriteLine($"Date: {enty._date} - Promt: {enty._promtText},");
+                //     Console.WriteLine($"{enty._entryText}");
+                // }
+                theJournal._entries = ReadFile;
+                continue;
+            }
+            else if (choice == 4)
+            {
+                // call savetofile
+                Journal.Savetofile(theJournal._entries);
+                
+                continue;
+            }
+            else if (choice == 5)
+            {
+                Console.WriteLine("Goodbye!");
+
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Invalid Input!");
+                continue;
+            }
+        }
     }
 }
