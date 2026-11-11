@@ -15,5 +15,9 @@ class Program
 
         person.SetFirstName("peter");
         Console.WriteLine(person.GetFirstName());
+        
+        Person p2 = new Person("King", "Josh");
+        Person p3 = new Person("Mr. ", "Alpha", "Sankoh");
+        Console.WriteLine(p3.GetFirstName());
     }
 }

@@ -5,5 +5,10 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello World! This is the Fractions Project.");
+    
+        Fraction fractions = new Fraction();
+        Console.WriteLine(fractions);
+
+        
     }
 }

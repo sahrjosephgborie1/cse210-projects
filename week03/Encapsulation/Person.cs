@@ -26,5 +26,24 @@ public class Person
     {
         _firstName = firstName;
     }
+    public Person()
+    {
+        _title = "";
+        _firstName = "Anonnymous";
+        _lastName = "Unknown";
+
+    }
+    public Person(string first, string last)
+    {
+        _title = "";
+        _firstName = first;
+        _lastName = last;
+    }
+    public Person(string title, string first, string last)
+    {
+        _title = title;
+        _firstName = first;
+        _lastName = last;
+    }
 }
 
