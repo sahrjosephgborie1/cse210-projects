@@ -7,5 +7,6 @@
     ],
     "cSpell.ignoreWords": [
         "lastname"
-    ]
+    ],
+    "dotnet.defaultSolution": "cse210-ww-student-template.sln"
 }
