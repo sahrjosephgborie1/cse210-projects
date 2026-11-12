@@ -29,12 +29,7 @@ class Program
             if (userInput == "quit")
             {
                 break;
-            }
-            else if (scripture.IsCompletelyHidden())
-            {
-                break;
-            }
-            
+            }            
             else
             {
                 Random random = new Random();
@@ -44,6 +39,10 @@ class Program
                 string hiddenWords = scripture.GetDisplayText();
                 Console.WriteLine(hiddenWords);
                 
+            }
+            if (scripture.IsCompletelyHidden())
+            {
+                break;
             }
         }
         
