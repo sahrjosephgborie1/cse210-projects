@@ -13,6 +13,7 @@ public class Fraction
     public Fraction(int wholeNumber)
     {
         _top = wholeNumber;
+        _bottom = 1;
     }
     // Fraction(int top, int bottom)
     public Fraction(int top, int bottom)
@@ -27,5 +28,16 @@ public class Fraction
     // SetBottm(int Bottom)
 
     // GetFractionString() string
+    public string GetFractionString()
+    {
+         
+        return _top.ToString()+"/"+_bottom.ToString();
+        
+    }
     //  GetDecimalValue() double
+    public double GetDecimalValue()
+    {
+        double average = (double) _top/_bottom;
+        return average;
+    }
 }
