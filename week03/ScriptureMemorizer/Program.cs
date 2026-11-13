@@ -1,3 +1,8 @@
+// Exceeding Requirements (Stretch Challenge):
+// Added custom user input at the start of the program, allowing the user to enter 
+// any book, chapter, verse (with support for an optional ending verse), and custom 
+// scripture text to memorize instead of using a single hardcoded scripture.
+
 using System;
 
 class Program
@@ -5,13 +10,37 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
-        Reference references = new Reference("Proverbs", 3, 5,6);
+        
+        // get references
+        Console.Write("Book: ");
+        string book = Console.ReadLine();
+
+        Console.Write("Chapter: ");
+        int Chapter = int.Parse(Console.ReadLine());
+
+        Console.Write("Verse: ");
+        int verse = int.Parse(Console.ReadLine());
+
+
+        Console.Write("Endverse: (if there's, if not, press enter): ");
+        string endVerse = (Console.ReadLine());
+        
+        Reference references;
+        if (string.IsNullOrWhiteSpace(endVerse))
+        {
+            references = new Reference(book, Chapter, verse);
+        }
+        else
+        {
+            int endverseInt = int.Parse(endVerse);
+            references = new Reference(book, Chapter, verse, endverseInt);
+        }
         
 
         // scripture
-        string script = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. 6 In all thy ways acknowledge him, and he shall direct thy paths.";
-        Scripture scripture = new Scripture(references, script);
-        
+        Console.Write("Scripture Text: ");
+        string script = Console.ReadLine();
+        Scripture scripture = new Scripture(references, script);         
         
 
         // Display
