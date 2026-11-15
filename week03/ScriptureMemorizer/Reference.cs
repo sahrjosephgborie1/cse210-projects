@@ -1,16 +1,16 @@
 public class Reference
 {
     private string _book = "Proverbs";
-    private int _chapter = 3;
-    private int _verse = 5;
-    private int _endVerse = 6;
+    private int _chapter;
+    private int _verse;
+    private int _endVerse;
 
     // Reference
     public Reference(string book, int chapter, int verse)
     {
         _book = book;
         _chapter = chapter;
-        _verse = verse;
+        _verse = verse; 
     }
     public Reference(string book, int chapter, int verse, int endVerse)
     {
