@@ -23,11 +23,13 @@ public class Reference
     // GetDisplayText() : string
     public string GetDisplayText()
     {
-        string book = _book;
-        int chapter = _chapter;
-        int verse = _verse;
-        int endVerse = _endVerse;
-        return book +" "+ chapter +":" + verse+"-"+endVerse;
-    }
-    // Possible getters and setters
+        if (_endVerse > _verse)
+        {
+            return $"{_book} {_chapter}:{_verse}-{_endVerse}";
+        }
+        else
+        {
+            return $"{_book} {_chapter}:{_verse}";
+        }
+    } 
 }
