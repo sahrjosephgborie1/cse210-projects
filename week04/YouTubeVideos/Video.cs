@@ -33,7 +33,7 @@ public class Video
     }
     public int GetCommentCount()
     {
-        return _comments.Count();
+        return _comments.Count;
     }
 
     public List<Comment> GetComments()
