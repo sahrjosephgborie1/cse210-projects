@@ -19,42 +19,31 @@ public class Order
         _products.Add(product);
     }
     // GetTotalPrice()
-    public int GetTotalPrice()
+    public decimal GetTotalPrice()
     {
-        int totalPrice = 0;
-        foreach (Product item in _products)
-        {   
-            int totalCost = item.GetTotalCost();
-            totalPrice += totalCost;
+          decimal totalCost = 0m;
 
-
-            if (_customer.IsInUSA() == true)
-            {
-                totalPrice += 5;
-                return totalPrice;
-            }
-            else
-            {
-                totalPrice += 35;
-                return totalPrice;
-            }
-
-
+        foreach (Product product in _products)
+        {
+            totalCost += product.GetTotalCost();
         }
-
-        return totalPrice;
+        decimal shippingCost = _customer.IsInUSA() ? 5m : 35m;
+        return totalCost + shippingCost;    
     }
-    // code here
-    // public string GetPackingLabel()
-    // { 
-    //     foreach (Product item in _products)
-    //     { 
-    //         return $"{item.GetName()} + {item.GetProductId().ToString()}";
-    //     }
-    // }
+ 
+    public string GetPackingLabel()
+    { 
+        List<string> lines = new List<string>();
+
+        foreach (Product product in _products)
+        { 
+            lines.Add( $"{product.GetName()}  (ID: {product.GetProductId().ToString()})");
+        }
+        return string.Join("\n", lines);
+    }
     public string GetShippingLabel()
     {
-        return $"{_customer.GetName()} {_customer.GetAddress()}";
+        return $"{_customer.GetName()}\n{_customer.GetAddress()}";
     }
 
 

@@ -17,7 +17,7 @@ public class Address
         _street = street;
         _city = city;
         _state = state;
-        _country = country;
+        _country = country.ToLower();
     }
     // Return true is country is USA
     public bool IsInUSA()
@@ -34,6 +34,6 @@ public class Address
 
     public string GetFullAddress()
     {
-        return $"\nAddress: {_street}, {_city}, {_state}, {_country} ";
+        return $"\nAddress: {_street}, \n{_city}, {_state}, \n{_country} ";
     }
 }
