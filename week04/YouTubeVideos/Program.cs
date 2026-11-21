@@ -8,7 +8,7 @@ class Program
         // list of videos and comment
         List<Video> listOfVideos = new List<Video>(); 
         
-        // Vide1 and comments
+        // Video1 and comments
         Video video1 = new Video();
         Comment comment1 = new Comment();
         
@@ -31,19 +31,18 @@ class Program
         // add video1 to list of videos
         listOfVideos.Add(video1);
 
-
-        // Video2 and it's comment
+        // Video2 and its comment
         Video video2 = new Video();
         video2.AddVideo("BYU-Pathway", "Apostle David A Bednar", 45);
         // comment 1
-        Comment comments1v2 = new Comment();
-        comments1v2.AddComment("Isaac", "I would love to try BYU-Pathway.");
-        video2.AddComment(comments1v2);
+        Comment comment1v2 = new Comment();
+        comment1v2.AddComment("Isaac", "I would love to try BYU-Pathway.");
+        video2.AddComment(comment1v2);
         // comment 2-v2
         Comment comment2v2 = new Comment();
         comment2v2.AddComment("Fayia", "Byu-Pathway has change my life. try it!");
         video2.AddComment(comment2v2);
-        //comment 3-v2
+        // comment 3-v2
         Comment comment3v2 = new Comment();
         comment3v2.AddComment("Elizabeth", "Thank you for sharing this.");
         video2.AddComment(comment3v2);
@@ -54,7 +53,7 @@ class Program
         // add video2 to list of videos
         listOfVideos.Add(video2);
 
-        // Video3 and it's comment
+        // Video3 and its comment
         Video video3 = new Video();
         video3.AddVideo("Jesus Christ", "President Abibu Charles", 45);
         // comment 1 video3
@@ -69,7 +68,7 @@ class Program
         Comment comment3v3 = new Comment();
         comment3v3.AddComment("Alpha", "He Lives");
         video3.AddComment(comment3v3);
-        // comment 3
+        // comment 4
         Comment comment4v3 = new Comment();
         comment4v3.AddComment("John", "I love Jesus Christ");
         video3.AddComment(comment4v3);
@@ -87,8 +86,8 @@ class Program
             // length
             int length = item.GetLength();
             // number of comments
-            int numofComments = item.GetCommentCount();
-            Console.WriteLine($"Video Title: {title} | Author: {author}, Video Length: {length} | Total Comments: {numofComments}");
+            int numOfComments = item.GetCommentCount();
+            Console.WriteLine($"Video Title: {title} | Author: {author}, Video Length: {length} | Total Comments: {numOfComments}");
             Console.WriteLine($"=====Comment Section=====");
  
             foreach (Comment com in item.GetComments())
@@ -101,7 +100,5 @@ class Program
             // spaces
             Console.WriteLine();
         }
-        
-        
     }
 }

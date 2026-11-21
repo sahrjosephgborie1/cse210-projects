@@ -1,6 +1,6 @@
 public class Product
 {
-    public string _name;
+    private string _name;
     private int _productId;
     private decimal _price;
     private int _quantity;
