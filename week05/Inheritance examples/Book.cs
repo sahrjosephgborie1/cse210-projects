@@ -4,8 +4,19 @@ namespace library_demo
 {
     public class Book
     {
-        private string _author = "";
-        private string _title = "";
+        protected string _author = "";
+        protected string _title = "";
+
+        public Book()
+        {
+            _author = "Anonnymous";
+            _title = "Unknown";
+        }
+        public Book(string author, string title)
+        {
+            _author = author;
+            _title = title;
+        }
 
         public string GetAuthor()
         {
