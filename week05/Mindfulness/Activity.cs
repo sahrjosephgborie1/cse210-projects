@@ -22,25 +22,27 @@ public class Activity
     public void DisplayStartingMessage()
     {
         Console.Clear();
-        Console.WriteLine($"Welcome to the {_name} Activity");
+        Console.WriteLine($"Welcome to the {_name}");
         Console.WriteLine();
         Console.WriteLine($"{_description}");
         Console.WriteLine();
-        Console.WriteLine("How long, in seconds, would you like for your session? ");
+        Console.Write("How long, in seconds, would you like for your session? ");
         int sessionTime = int.Parse(Console.ReadLine());
-        Console.WriteLine("Get ready...");
+        _duration = sessionTime;
         Console.Clear();
+        Console.WriteLine("Get ready...");
     }
 
     public void DisplayEndingMessage()
     {
-        Console.WriteLine("Well Done!!");
-        Console.WriteLine("");
+        Console.WriteLine();
+        Console.WriteLine("Well Done!!"); 
         // spiner   
         ShowSpinner(3);
-        Console.WriteLine($"You have completed another {_duration} seconds of the {_name}");
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.");
         // spin again for seconds
         ShowSpinner(3);
+        Console.Clear();
     }
 
     public void ShowSpinner(int seconds)
@@ -97,6 +99,7 @@ public class Activity
                 i = 0;
             }
         }
+        Console.WriteLine();
     }
 
     public void ShowCountDown(int second)
@@ -109,12 +112,11 @@ public class Activity
             Console.Write(text);
             Thread.Sleep(1000);
 
-            string backspacess = new string('\b', length);
-            string spaces = new string('', length);
-            Console.Write($"{backspacess}{backspacess}");
+            string backspaces = new string('\b', length);
+            string spaces = new string(' ', length);
+            Console.Write($"{backspaces}{spaces}{backspaces}");
           
         } 
-
         Console.WriteLine();
     }
 }
